@@ -66,17 +66,22 @@ public class Oblig1 {
 
     ///// Oppgave 3 //////////////////////////////////////
     public static int antallUlikeUsortert(int[] a) {
-        int antall_ulike = 0;
 
-        for(int i = 0; i < a.length; i++){
-            for(int j = 1; j < a.length; j++){
-                while(a[i] == a[j] && i != j){
-                    i++;
+
+        int antall_ulike = 0;
+        for (int i = 0; i < a.length; i++) {
+            int current_num = a[i];
+            boolean talletFinnes = false;
+            for (int j = 0; j < i; j++){
+                if (current_num == a[j]) {
+                    talletFinnes = true;
+                    break;
                 }
             }
-            antall_ulike++;
+            if (!talletFinnes) {
+                antall_ulike++;
+            }
         }
-
         return antall_ulike;
     }
 
