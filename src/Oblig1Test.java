@@ -1,4 +1,4 @@
-package no.oslomet.cs.algdat.Oblig1;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
