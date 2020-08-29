@@ -15,7 +15,9 @@ public class Oblig1 {
         }
 
         // Løper gjennom arrayet og finner den største verdi
+        ombyttinger(a);
         int maks_verdi = a[0];
+
         for(int i = 1; i < a.length; i++){
             if(a[i] > maks_verdi){
                 maks_verdi = a[i];
@@ -25,7 +27,17 @@ public class Oblig1 {
     }
 
     public static int ombyttinger(int[] a) {
-        throw new UnsupportedOperationException();
+        int antOmbytting = 0;
+        for(int i = 0; i<a.length-1; ++i){
+            if(a[i]>a[i+1]){
+                //ombytting:
+                int tempt = a[i+1];
+                a[i+1] = a[i];
+                a[i] = tempt;
+                antOmbytting++;
+            }
+        }
+        return antOmbytting;
     }
 
     ///// Oppgave 2 //////////////////////////////////////
