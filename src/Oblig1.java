@@ -87,7 +87,76 @@ public class Oblig1 {
 
     ///// Oppgave 4 //////////////////////////////////////
     public static void delsortering(int[] a) {
-        throw new UnsupportedOperationException();
+        int [] a_delsortert;
+
+        //separer i to array:
+        int[] partall = {};
+        int[] oddetall = {};
+        for (int i = 0; i < a.length; ++i) {
+            if (a[i] % 2 == 0) {
+                    partall[i] = a[i];
+            }
+        }
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] % 0 == 1) {
+                    oddetall[i] = a[i];
+            }
+        }
+
+        //sorter dem:
+        int[] partallSortert = new int[partall.length];
+        for (int n = partall.length; n >= 0; n--) {
+            for (int i = 0; i < partall.length - 1; ++i) {
+                if (a[i] > a[i + 1]) {
+                    //bytting:
+                    int tempt = a[i + 1];
+                    a[i + 1] = a[i];
+                    a[i] = tempt;
+                }
+                partallSortert[n] = partall[i];
+            }
+        }
+
+        int[] oddetallSortert = new int[oddetall.length];
+        for (int n = oddetall.length; n >= 0; n--) {
+            for (int i = 0; i < oddetall.length - 1; ++i) {
+                if (a[i] > a[i + 1]) {
+                    //bytting:
+                    int tempt = a[i + 1];
+                    a[i + 1] = a[i];
+                    a[i] = tempt;
+                }
+                oddetallSortert[n] = oddetall[i];
+            }
+        }
+        //legg sammen: O + P
+        a_delsortert = new int[a.length];
+        for (int i = 0; i < oddetallSortert.length; ++i) {
+            a_delsortert[i] = oddetallSortert[i];
+        }
+        for (int i = oddetallSortert.length; i < partallSortert.length; ++i) {
+            a_delsortert[i] = partallSortert[i];
+        }
+
+
+
+        /*int left = 0;
+        int right = a.length-1;
+        int antall_oddtall = 0;
+        for(int i = 0; i < a.length; i++){
+            while(a[left] % 2 == 1){
+                left++;
+                antall_oddtall++;
+            }
+            while(a[right] % 2 == 0){
+                right--;
+            }
+            if(left > right){
+                int temp = a[left];
+                a[left] = a[right];
+                a[right] = temp;
+            }
+        }*/
     }
 
     ///// Oppgave 5 //////////////////////////////////////
