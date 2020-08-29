@@ -2,13 +2,26 @@
 ////// Løsningsforslag Oblig 1 ////////////////////////
 
 import java.lang.UnsupportedOperationException;
+import java.util.NoSuchElementException;
 
 public class Oblig1 {
     private Oblig1() {}
 
     ///// Oppgave 1 //////////////////////////////////////
     public static int maks(int[] a) {
-        throw new UnsupportedOperationException();
+        // Kaster en avvik når tabellen er tomt
+        if(a.length < 1){
+            throw new NoSuchElementException("Tabellen er tomt!");
+        }
+
+        // Løper gjennom arrayet og finner den største verdi
+        int maks_verdi = a[0];
+        for(int i = 1; i < a.length; i++){
+            if(a[i] > maks_verdi){
+                maks_verdi = a[i];
+            }
+        }
+        return maks_verdi;
     }
 
     public static int ombyttinger(int[] a) {
