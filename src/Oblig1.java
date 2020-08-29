@@ -42,12 +42,42 @@ public class Oblig1 {
 
     ///// Oppgave 2 //////////////////////////////////////
     public static int antallUlikeSortert(int[] a) {
-        throw new UnsupportedOperationException();
+        for(int i = 0; i < a.length-1; i++){
+            if(a[i] > a[i+1]){
+                throw new IllegalStateException("Tabellen er usortert!");
+            }
+        }
+
+        // Variabel som inneholder antall ulike elementer
+        int antall_ulike = 0;
+
+        // Teller hvor mange elementer er ulike
+        for(int i = 0; i < a.length; i++){
+            // Hvis duplikater finnes, hopp over dem
+            while(i < a.length-1 && a[i] == a[i+1]){
+                i++;
+            }
+            antall_ulike++;
+        }
+
+        return antall_ulike;
+
     }
 
     ///// Oppgave 3 //////////////////////////////////////
     public static int antallUlikeUsortert(int[] a) {
-        throw new UnsupportedOperationException();
+        int antall_ulike = 0;
+
+        for(int i = 0; i < a.length; i++){
+            for(int j = 1; j < a.length; j++){
+                while(a[i] == a[j] && i != j){
+                    i++;
+                }
+            }
+            antall_ulike++;
+        }
+
+        return antall_ulike;
     }
 
     ///// Oppgave 4 //////////////////////////////////////
