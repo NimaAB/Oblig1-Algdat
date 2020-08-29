@@ -2,8 +2,8 @@
 
 Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
 Oppgaven er levert av følgende studenter:
-* Navn Navnesen, S123456, s123456@oslomet.no
-* ...
+* Glaysa Fernandez, S344047, s344047@oslomet.no
+* Nima Abdollahi, S341890, s344047@oslomet.no
 
 # Arbeidsfordeling
 
