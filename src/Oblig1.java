@@ -87,7 +87,7 @@ public class Oblig1 {
 
     ///// Oppgave 4 //////////////////////////////////////
     public static void delsortering(int[] a) {
-        int [] a_delsortert;
+        /*int [] a_delsortert;
 
         //separer i to array:
         int[] partall = {};
@@ -136,7 +136,7 @@ public class Oblig1 {
         }
         for (int i = oddetallSortert.length; i < partallSortert.length; ++i) {
             a_delsortert[i] = partallSortert[i];
-        }
+        }*/
 
 
 
@@ -157,6 +157,20 @@ public class Oblig1 {
                 a[right] = temp;
             }
         }*/
+
+        int begin = 0;
+        int end = a.length - 1;
+
+        // Samler alle partall på høyre side og oddetall på venstre side
+        for(int i = begin; i < end; i++){
+            if(a[i] % 2 == 0) {
+                int temp = a[i];
+                a[i] = a[end];
+                a[end] = temp;
+                end--;
+                i--;
+            }
+        }
     }
 
     ///// Oppgave 5 //////////////////////////////////////

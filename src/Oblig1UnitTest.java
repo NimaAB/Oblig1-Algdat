@@ -1,5 +1,7 @@
 
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -33,7 +35,14 @@ class Oblig1UnitTest {
 
     @org.junit.jupiter.api.Test
     void delsortering() {
-        assertEquals(true, false, "Implementer delsortering og denne testen");
+        int[] d = {1,2,3,4,5};
+        try {
+            Oblig1.delsortering(d);
+            System.out.println(Arrays.toString(d));
+        } catch (Exception e) {
+            System.out.println("Noe er galt! " + e.getMessage());
+        }
+        //assertEquals(true, false, "Implementer delsortering og denne testen");
     }
 
     @org.junit.jupiter.api.Test
