@@ -1,61 +1,57 @@
 public class Forarbeid {
-    static void delsortering(int [] a){
-        int [] a_delsortert;
 
-        //separer i to array:
-        int[] partall = {0};
-        int[] oddetall = {0};
-        for (int i = 0; i < a.length; ++i) {
-            if (a[i] % 2 == 0) {
-                    partall[i] = a[i];
-            }
-        }
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] % 2 == 1) {
-                    oddetall[i] = a[i];
-            }
-        }
+/*    static void rotasjon(char [] a, int k){
 
-        //sorter dem:
-        //int[] partallSortert = new int[partall.length];
-        for (int n = partall.length; n >= 0; n--) {
-            for (int i = 0; i < partall.length - 1; ++i) {
-                if (a[i] > a[i + 1]) {
-                    //bytting:
-                    int tempt = a[i + 1];
-                    a[i + 1] = a[i];
-                    a[i] = tempt;
+        int j = 0;
+        while (j<k) {
+            int end = a.length-1;
+            char tempt = a[end];
+            for(int i = end; i > 0; i--){
+                a[i] = a[i-1];
+                if(i == 1){
+                    a[0] = tempt;
                 }
             }
+            j++;
         }
+    }*/
 
-        //int[] oddetallSortert = new int[oddetall.length];
-        for (int n = oddetall.length; n >= 0; n--) {
-            for (int i = 0; i < oddetall.length - 1; ++i) {
-                if (a[i] > a[i + 1]) {
-                    //bytting:
-                    int tempt = a[i + 1];
-                    a[i + 1] = a[i];
-                    a[i] = tempt;
-                }
-            }
+    static void leftRotate(char [] arr, int k) {
+
+        int n = arr.length;
+        int mod = k % n;
+
+        for (int i = 0; i < n; ++i) {
+            arr [i] = arr[(i + mod) % n];
         }
-        //legg sammen: O + P
-        a_delsortert = new int[a.length];
-        for (int i = 0; i < oddetall.length; ++i) {
-            a_delsortert[i] = oddetall[i];
-        }
-        //The following loop gets a arrayOutOfBoundExeption:
-        for (int i = a_delsortert.length; i < partall.length;++i) {
-            a_delsortert[i] = partall[i];
+    }
+    static void reverseArray (char [] arr, int start, int end) {
+        while (start < end) {
+            char temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
         }
     }
 
-    public static void main(String[] args) {
-        int a = -4;
-        int b = a%2;
-        System.out.println(b);
+    // Function to right rotate
+    // arr[] of size n by d
+    static void rightRotate(char [] arr, int k) {
+        int n = arr.length;
+        reverseArray(arr, 0, n - 1);
+        reverseArray(arr, 0, k - 1);
+        reverseArray(arr, k, n - 1);
+    }
 
+
+
+    public static void main(String[] args) {
+        char[] a= {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};;
+       leftRotate(a,2);
+       for(char el:a){
+           System.out.println(el);
+       }
     }
 
     /*int left = 0;

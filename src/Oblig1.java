@@ -125,12 +125,53 @@ public class Oblig1 {
 
     ///// Oppgave 5 //////////////////////////////////////
     public static void rotasjon(char[] a) {
-        throw new UnsupportedOperationException();
+        if(a.length != 0){
+            int end = a.length-1;
+            char tempt = a[end];
+            for(int i = end; i > 0; i--){
+                a[i] = a[i-1];
+                if(i == 1){
+                    a[0] = tempt;
+                }
+            }
+        }
     }
 
     ///// Oppgave 6 //////////////////////////////////////
+    static void leftRotate(char [] arr, int k) {
+        int n = arr.length;
+        int mod = k % n;
+
+        for (int i = 0; i < n; ++i) {
+            arr [i] = arr[(i + mod) % n];
+        }
+    }
+    static void reverseArray (char [] arr, int start, int end) {
+        while (start < end) {
+            char temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+    static void rightRotate(char [] arr, int k) {
+        int n = arr.length;
+        reverseArray(arr, 0, n - 1);
+        reverseArray(arr, 0, k - 1);
+        reverseArray(arr, k, n - 1);
+    }
+
     public static void rotasjon(char[] a, int k) {
-        throw new UnsupportedOperationException();
+        if(a.length !=2){
+            if(k>=0){
+                rightRotate(a,k);
+            }else{
+                k *=-1;
+                leftRotate(a,k);
+            }
+        }
+
     }
 
     ///// Oppgave 7 //////////////////////////////////////
