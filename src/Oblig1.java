@@ -88,23 +88,6 @@ public class Oblig1 {
     ///// Oppgave 4 //////////////////////////////////////
     public static void delsortering(int[] a) {
 
-        /*int left = 0;
-        int right = a.length-1;
-        int antall_oddtall = 0;
-        for(int i = 0; i < a.length; i++){
-            while(a[left] % 2 == 1){
-                left++;
-                antall_oddtall++;
-            }
-            while(a[right] % 2 == 0){
-                right--;
-            }
-            if(left > right){
-                int temp = a[left];
-                a[left] = a[right];
-                a[right] = temp;
-            }
-        }*/
 
         int begin = 0;
         int end = a.length - 1;
@@ -117,6 +100,25 @@ public class Oblig1 {
                 a[end] = temp;
                 end--;
                 i--;
+            }
+        }
+        for (int n = a.length; n >= 0; n--) {
+            for (int i = 0; i < a.length - 1; ++i) {
+                if((a[i]%2==1 && a[i+1]%2 == 1) || (a[i]%2== -1 && a[i+1]%2 == -1)){
+                    if (a[i] > a[i + 1]) {
+                        //bytting:
+                        int tempt = a[i + 1];
+                        a[i + 1] = a[i];
+                        a[i] = tempt;
+                    }
+                } else if(a[i]%2==0 && a[i+1]%2==0){
+                    if (a[i] > a[i + 1]) {
+                        //bytting:
+                        int tempt = a[i + 1];
+                        a[i + 1] = a[i];
+                        a[i] = tempt;
+                    }
+                }
             }
         }
     }

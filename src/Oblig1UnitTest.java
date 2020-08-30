@@ -35,13 +35,12 @@ class Oblig1UnitTest {
 
     @org.junit.jupiter.api.Test
     void delsortering() {
-        int[] d = {1,2,3,4,5};
-        try {
-            Oblig1.delsortering(d);
-            System.out.println(Arrays.toString(d));
-        } catch (Exception e) {
-            System.out.println("Noe er galt! " + e.getMessage());
-        }
+        int[] d = {1,2,3,-4,5};
+        int [] expected ={1,3, 5, -4, 2};
+        Oblig1.delsortering(d);
+        assertArrayEquals(expected,d);
+        System.out.println(Arrays.toString(d));
+
         //assertEquals(true, false, "Implementer delsortering og denne testen");
     }
 
