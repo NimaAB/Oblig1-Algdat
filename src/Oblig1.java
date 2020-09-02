@@ -187,7 +187,31 @@ public class Oblig1 {
 
     ///// Oppgave 8 //////////////////////////////////////
     public static int[] indekssortering(int[] a) {
-        throw new UnsupportedOperationException();
+        int [] indekser = new int[a.length];
+        int [] arr = a.clone();                         //Arrayet a kan ikke endre seg, derfor jeg brukte en arr
+
+        // Sortert arr arrayet ved bruk av insertion sort
+        for (int i = 1; i < arr.length; i++) {
+            int current = arr[i];
+            int j = i - 1;                              //Indeks til tallet bak
+            while(j >= 0 && current < arr[j]) {         //Så lenge det finnes et tall mindre enn current, bytt plass
+                arr[j+1] = arr[j];                      //Tallet bak blir verdien til indeks foran seg
+                j--;                                    //Bryter while loopen
+            }
+            arr[j+1] = current;                         //Tallet foran blir verdien til indeks bak seg
+        }
+
+        // Sammenligner de to arrayet og lagrer deres indeks
+        for(int i = 0; i < a.length; i++){
+            for(int j = 0; j < arr.length; j++){
+                if(arr[i] == a[j]){
+                    indekser[i] = j;
+                    break;
+                }
+            }
+        }
+
+        return indekser;
     }
 
     ///// Oppgave 9 //////////////////////////////////////
