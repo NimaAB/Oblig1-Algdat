@@ -61,7 +61,10 @@ class Oblig1UnitTest {
 
     @org.junit.jupiter.api.Test
     void tredjeMin() {
-        assertEquals(true, false, "Implementer tredjeMin og denne testen");
+        int [] a = {1,3,2};
+        int [] r = Oblig1.tredjeMin(a);
+        int [] f = {0,2,1};
+        assertArrayEquals(f,r);
     }
 
     @org.junit.jupiter.api.Test

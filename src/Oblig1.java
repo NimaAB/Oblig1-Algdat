@@ -104,7 +104,7 @@ public class Oblig1 {
         }
         for (int n = a.length; n >= 0; n--) {
             for (int i = 0; i < a.length - 1; ++i) {
-                if((a[i]%2==1 && a[i+1]%2 == 1) || (a[i]%2== -1 && a[i+1]%2 == -1)){
+                if((a[i]%2==1 && a[i+1]%2 == 1)){
                     if (a[i] > a[i + 1]) {
                         //bytting:
                         int tempt = a[i + 1];
@@ -191,8 +191,69 @@ public class Oblig1 {
     }
 
     ///// Oppgave 9 //////////////////////////////////////
+
     public static int[] tredjeMin(int[] a) {
-        throw new UnsupportedOperationException();
+        int n = a.length;
+        if(n<3){
+            throw new NoSuchElementException();
+        }
+        int mI = min(a[0],a[1]);
+        int nmI = max(a[0],a[1]);
+        int tmI=2;
+        if(a[mI]>a[tmI]){
+            tmI = mI;
+            mI = 2;
+        }
+        if(a[nmI]>a[tmI]){
+            int temp = tmI;
+            tmI = nmI;
+            nmI = temp;
+        }
+        int m = a[mI]; int nm = a[nmI]; int tm = a[tmI];
+
+        for (int i = 3; i<n; ++i){
+            int current = a[i];
+            if(current<tm){
+                if(current<nm){
+                    if(current<m){
+                        tmI = nmI;
+                        tm = a[tmI];
+                        nmI = mI;
+                        nm = a[nmI];
+                        mI = i;
+                        m = a[mI];
+                    }else{
+                        tmI = nmI;
+                        tm = a[tmI];
+                        nmI = i;
+                        nm = a[nmI];
+                    }
+                }else{
+                    tmI = i;
+                    tm = a[tmI];
+                }
+            }
+        }
+        return new int[] {mI,nmI,tmI};
+    }
+    //Hjelpe metoder
+    static int max(int ... a){
+        int max_index=0;
+        for(int i = 1; i<a.length; ++i){
+            if (a[max_index] < a[i]){
+                max_index = i;
+            }
+        }
+        return max_index;
+    }
+    static int min(int ... a){
+        int min_index=0;
+        for(int i = 1; i<a.length; ++i){
+            if (a[min_index] > a[i]){
+                min_index = i;
+            }
+        }
+        return min_index;
     }
 
     ///// Oppgave 10 //////////////////////////////////////
