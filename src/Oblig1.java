@@ -335,7 +335,53 @@ public class Oblig1 {
     }
 
     public static boolean inneholdt(String a, String b) {
-        throw new UnsupportedOperationException();
+        String str = "";
+        boolean inneholdt = true;
+
+        // Hvis det finnes et tegn på String a som ikke finnes i String b, return false
+        for(int i = 0; i < a.length(); i++){
+            if(b.indexOf(a.charAt(i)) == -1){
+                return false;
+            }
+        }
+
+        // Finner hvilke tegner vi ser etter
+        for(int i = 0; i < a.length(); i++) {
+            if(str.indexOf(a.charAt(i)) == -1)
+                str = str+a.charAt(i);
+        }
+
+        // Teller hvor mange tegn er på hvert string
+        int[] counterA = counter(str,a);
+        int[] counterB = counter(str,b);
+
+        // Hvis antall tegn på String b er mindre enn antall tegn på String a, return false
+        for(int ca : counterA){
+            for(int cb : counterB){
+                if (cb < ca) {
+                    inneholdt = false;
+                    break;
+                }
+            }
+        }
+
+        return inneholdt;
+    }
+
+    // Hjelpe metode for oppgave 10
+    public static int[] counter(String a, String b){
+        int[] result = new int[a.length()];
+        int counter = 0;
+        for(int i = 0; i < a.length(); i++){
+            for(int j = 0; j < b.length(); j++){
+                if(a.charAt(i) == b.charAt(j)){
+                    counter++;
+                }
+            }
+            result[i] = counter;
+            counter = 0;
+        }
+        return result;
     }
 
 }  // Oblig1
