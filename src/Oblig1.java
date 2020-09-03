@@ -176,9 +176,58 @@ public class Oblig1 {
 
     ///// Oppgave 7 //////////////////////////////////////
     /// 7a)
-    public static String flett(String s, String t) {
-        throw new UnsupportedOperationException();
+    static char[] splitString(String a){
+        int n= a.length();
+        char [] aSplit = new char[n];
+        for(int i = 0; i<n;++i){
+            aSplit[i] = a.charAt(i);
+        }
+        return aSplit;
     }
+    public static String flett(String s, String t) {
+        char [] S_arr = splitString(s);
+        char [] T_arr = splitString(t);
+        //Deklarer n slik:(hvis s>t så er den s) else if(s<t så er den t) else (den er t)
+        int n = (S_arr.length> T_arr.length)? S_arr.length : (S_arr.length<T_arr.length)? T_arr.length : T_arr.length;
+
+        char [] flettIChar = new char[S_arr.length + T_arr.length];
+        int i = 0;
+        while(i<n){
+            if(i==0 && S_arr.length != 0 && T_arr.length!=0){
+                flettIChar[i] = S_arr[i];
+                flettIChar[i+1] = T_arr[i];
+            }else if(i>= S_arr.length){
+                int j = 2*i;
+                int k = i;
+                while(j<flettIChar.length){
+                    flettIChar[j] = T_arr[k];
+                    k++;
+                    j++;
+                }
+                break;
+            }else if(i>= T_arr.length){
+                int j = 2*i;
+                int k = i;
+                while(j<flettIChar.length){
+                    flettIChar[j] = S_arr[k];
+                    k++;
+                    j++;
+                }
+                break;
+            } else{
+                flettIChar[2*i] = S_arr[i];
+                flettIChar[2*i+1] = T_arr[i];
+            }
+            i++;
+        }
+
+        StringBuilder flettet = new StringBuilder();
+        for(char c:flettIChar){
+            flettet.append(c);
+        }
+        return flettet.toString();
+    }
+
 
     /// 7b)
     public static String flett(String... s) {
