@@ -231,7 +231,28 @@ public class Oblig1 {
 
     /// 7b)
     public static String flett(String... s) {
-        throw new UnsupportedOperationException();
+        int ls = 0;
+        for (String value : s) {
+            if (value.length() > ls) {
+                ls = value.length();
+            }
+        }
+        char [][] data = new char[s.length][ls];
+        for(int i =0; i<s.length;++i){
+            for(int j = 0; j<s[i].length();++j){
+                data[i][j]=s[i].charAt(j);
+            }
+        }
+
+        String resultat ="";
+        for(int i = 0; i<ls;++i){
+            for(int j = 0; j<s.length;++j){
+                if(data[j][i]!=0){
+                    resultat+=data[j][i];
+                }
+            }
+        }
+        return resultat;
     }
 
     ///// Oppgave 8 //////////////////////////////////////
