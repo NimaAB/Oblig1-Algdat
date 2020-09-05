@@ -138,40 +138,24 @@ public class Oblig1 {
     }
 
     ///// Oppgave 6 //////////////////////////////////////
-    static void leftRotate(char [] arr, int k) {
-        int n = arr.length;
-        int mod = k % n;
-
-        for (int i = 0; i < n; ++i) {
-            arr [i] = arr[(i + mod) % n];
-        }
-    }
-    static void reverseArray (char [] arr, int start, int end) {
-        while (start < end) {
-            char temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
-        }
-    }
-    static void rightRotate(char [] arr, int k) {
-        int n = arr.length;
-        reverseArray(arr, 0, n - 1);
-        reverseArray(arr, 0, k - 1);
-        reverseArray(arr, k, n - 1);
-    }
 
     public static void rotasjon(char[] a, int k) {
-        if(a.length !=2){
-            if(k>=0){
-                rightRotate(a,k);
-            }else{
-                k *=-1;
-                leftRotate(a,k);
-            }
+        if(a.length ==0){
+            return;
         }
-
+        int n = a.length;
+        if(k<0){
+            k*=-1;
+        }
+        char []temp =  new char[n-k];
+        int j = 0;
+        for(int i = k;i<n;++i,++j){
+            temp[j] = a[i];
+            a[i] = a[j];
+        }
+        for(int i = 0; i<temp.length; ++i){
+            a[i]=temp[i];
+        }
     }
 
     ///// Oppgave 7 //////////////////////////////////////
