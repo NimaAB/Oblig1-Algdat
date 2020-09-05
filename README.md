@@ -1,15 +1,15 @@
-# Arbeids fremgang:
+# Arbeidsfremgang:
 
-- [x] Oppgave 1
-- [x] Oppgave 2
-- [X] Oppgave 3
-- [ ] Oppgave 4
-- [x] Oppgave 5
-- [ ] Oppgave 6
-- [x] Oppgave 7
-- [x] Oppgave 8
-- [x] Oppgave 9
-- [x] Oppgave 10
+- [x] Oppgave 1 : maks(int [] a) & ombyttinger(int [] a)
+- [x] Oppgave 2 : antallUlikeSortert(int [] a)
+- [X] Oppgave 3 : antallUlikeUsortert(int [] a)
+- [ ] Oppgave 4 : delsortering(int [] a)
+- [x] Oppgave 5 : rotasjon(char [] a)
+- [ ] Oppgave 6 : rotasjon(char [] a, int k)
+- [x] Oppgave 7 : flett(String s, String t) & flett(String ... s) 
+- [x] Oppgave 8 : indekssortering(int [] a)
+- [x] Oppgave 9 : tredjeMin(int [] a)
+- [x] Oppgave 10 : inneholdt(String a, String b)
 
 # Obligatorisk oppgave 1 i Algoritmer og Datastrukturer
 

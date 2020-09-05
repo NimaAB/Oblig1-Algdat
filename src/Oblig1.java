@@ -176,14 +176,7 @@ public class Oblig1 {
 
     ///// Oppgave 7 //////////////////////////////////////
     /// 7a)
-    static char[] splitString(String a){
-        int n= a.length();
-        char [] aSplit = new char[n];
-        for(int i = 0; i<n;++i){
-            aSplit[i] = a.charAt(i);
-        }
-        return aSplit;
-    }
+
     public static String flett(String s, String t) {
         char [] S_arr = splitString(s);
         char [] T_arr = splitString(t);
@@ -226,6 +219,15 @@ public class Oblig1 {
             flettet.append(c);
         }
         return flettet.toString();
+    }
+    //hjelpemetode for 7a)
+    static char[] splitString(String a){
+        int n= a.length();
+        char [] aSplit = new char[n];
+        for(int i = 0; i<n;++i){
+            aSplit[i] = a.charAt(i);
+        }
+        return aSplit;
     }
 
 
