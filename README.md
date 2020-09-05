@@ -1,3 +1,16 @@
+# Arbeids fremgang:
+
+- [x] Oppgave 1
+- [x] Oppgave 2
+- [X] Oppgave 3
+- [ ] Oppgave 4
+- [x] Oppgave 5
+- [ ] Oppgave 6
+- [x] Oppgave 7
+- [x] Oppgave 8
+- [x] Oppgave 9
+- [x] Oppgave 10
+
 # Obligatorisk oppgave 1 i Algoritmer og Datastrukturer
 
 Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
@@ -12,4 +25,6 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
 * Else har hatt hovedansvar for oppgave 2, 4, og 6. 
 * Fatima har hatt hovedansvar for oppgave 7 og 8. 
 * Vi har i fellesskap løst oppgave 10. 
+
+
 
