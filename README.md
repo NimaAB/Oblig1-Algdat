@@ -5,7 +5,7 @@
 - [X] Oppgave 3 : antallUlikeUsortert(int [] a)
 - [ ] Oppgave 4 : delsortering(int [] a)
 - [x] Oppgave 5 : rotasjon(char [] a)
-- [ ] Oppgave 6 : rotasjon(char [] a, int k)
+- [x] Oppgave 6 : rotasjon(char [] a, int k)
 - [x] Oppgave 7 : flett(String s, String t) & flett(String ... s) 
 - [x] Oppgave 8 : indekssortering(int [] a)
 - [x] Oppgave 9 : tredjeMin(int [] a)

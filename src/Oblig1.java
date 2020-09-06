@@ -140,21 +140,42 @@ public class Oblig1 {
     ///// Oppgave 6 //////////////////////////////////////
 
     public static void rotasjon(char[] a, int k) {
-        if(a.length ==0){
+        if (a.length == 0) {
             return;
         }
-        int n = a.length;
-        if(k<0){
+        //coping the array a, without having a reference to the original array:
+        char[] akopi = new char[a.length];
+        for (int i = 0; i < a.length; ++i) {
+            akopi[i] = a[i];
+        }
+        //The number of rotations for any arrays is between [0,a.length].
+        int kKopi = (k<0)?k*-1:k;
+        if (kKopi > a.length) {
+            k = k % a.length;
+        }
+        //pushing characters by k in a.
+        if (k >= 0) {
+            int j = 0;
+            for (int i = k; i < a.length; ++i, ++j) {
+                a[i] = akopi[j];
+            }
+            //Get the remaining characters from akopi and set them to place from the start of a to the k:
+            for (int i = 0; i < k; ++i, ++j) {
+                a[i] = akopi[j];
+            }
+        } else {
             k*=-1;
-        }
-        char []temp =  new char[n-k];
-        int j = 0;
-        for(int i = k;i<n;++i,++j){
-            temp[j] = a[i];
-            a[i] = a[j];
-        }
-        for(int i = 0; i<temp.length; ++i){
-            a[i]=temp[i];
+            int j = a.length - 1;
+            for (int i = a.length -1 - k; i >= 0; --i, --j) {
+                a[i] = akopi[j];
+            }
+            //Get the remaining characters from akopi and set them to place from the end of a to the k:
+            int i = a.length -1;
+            while (i>=a.length-k){
+                a[i] = akopi[j];
+                i--;
+                j--;
+            }
         }
     }
 
