@@ -148,7 +148,7 @@ public class Oblig1 {
         for (int i = 0; i < a.length; ++i) {
             akopi[i] = a[i];
         }
-        //The number of rotations for any arrays is between [0,a.length].
+        //any possible number of rotations for any arrays is between [0,a.length].
         int kKopi = (k<0)?k*-1:k;
         if (kKopi > a.length) {
             k = k % a.length;
