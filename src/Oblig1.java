@@ -87,40 +87,58 @@ public class Oblig1 {
 
     ///// Oppgave 4 //////////////////////////////////////
     public static void delsortering(int[] a) {
-
-
         int begin = 0;
-        int end = a.length - 1;
+        int end = a.length-1;
+        int intervall = 0;
 
-        // Samler alle partall på høyre side og oddetall på venstre side
-        for(int i = begin; i < end; i++){
-            if(a[i] % 2 == 0) {
-                int temp = a[i];
-                a[i] = a[end];
-                a[end] = temp;
-                end--;
-                i--;
+        for(int element:a){
+            if(element % 2 == 0){
+                intervall++;
             }
         }
-        for (int n = a.length; n >= 0; n--) {
-            for (int i = 0; i < a.length - 1; ++i) {
-                if((a[i]%2==1 && a[i+1]%2 == 1)){
-                    if (a[i] > a[i + 1]) {
-                        //bytting:
-                        int tempt = a[i + 1];
-                        a[i + 1] = a[i];
-                        a[i] = tempt;
-                    }
-                } else if(a[i]%2==0 && a[i+1]%2==0){
-                    if (a[i] > a[i + 1]) {
-                        //bytting:
-                        int tempt = a[i + 1];
-                        a[i + 1] = a[i];
-                        a[i] = tempt;
-                    }
+
+        if(intervall < a.length && intervall >= 1){
+            // Samler alle partall på høyre side og oddetall på venstre side
+            for(int i = begin; i < end; i++){
+                if(a[i] % 2 == 0) {
+                    int temp = a[i];
+                    a[i] = a[end];
+                    a[end] = temp;
+                    end--;
+                    i--;
                 }
             }
+            quickSort(a,0,a.length-intervall-1);
+            quickSort(a,a.length-intervall,a.length-1);
+        } else {
+            quickSort(a,0,a.length-1);
         }
+    }
+
+    static void quickSort(int [] a,int begin,int end){
+        if(end <= begin) return;
+        int pP = partition(a,begin,end);
+        quickSort(a,begin,pP-1);
+        quickSort(a,pP+1,end);
+    }
+
+    static int partition(int[] array, int begin, int end) {
+        int right = end;
+        int left = begin;
+
+        for (int i = begin; i < end; i++) {
+            if (array[i] < array[right]) {
+                int temp = array[left];
+                array[left] = array[i];
+                array[i] = temp;
+                left++;
+            }
+        }
+        int temp = array[right];
+        array[right] = array[left];
+        array[left] = temp;
+
+        return left;
     }
 
     ///// Oppgave 5 //////////////////////////////////////
