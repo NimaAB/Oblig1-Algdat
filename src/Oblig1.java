@@ -9,12 +9,12 @@ public class Oblig1 {
 
     ///// Oppgave 1 //////////////////////////////////////
     public static int maks(int[] a) {
-        // Kaster en avvik når tabellen er tomt
+        // Kaster en avvik naar tabellen er tomt
         if(a.length < 1){
             throw new NoSuchElementException("Tabellen er tomt!");
         }
 
-        // Løper gjennom arrayet og finner den største verdi
+        // Loper gjennom arrayet og finner den storste verdi
         ombyttinger(a);
         int maks_verdi = a[0];
 
@@ -98,7 +98,7 @@ public class Oblig1 {
         }
 
         if(intervall < a.length && intervall >= 1){
-            // Samler alle partall på høyre side og oddetall på venstre side
+            // Samler alle partall på hoyre side og oddetall på venstre side
             for(int i = begin; i < end; i++){
                 if(a[i] % 2 == 0) {
                     int temp = a[i];
@@ -203,7 +203,7 @@ public class Oblig1 {
     public static String flett(String s, String t) {
         char [] S_arr = splitString(s);
         char [] T_arr = splitString(t);
-        //Deklarer n slik:(hvis s>t så er den s) else if(s<t så er den t) else (den er t)
+        //Deklarer n slik:(hvis s>t saa er den s) else if(s<t saa er den t) else (den er t)
         int n = (S_arr.length> T_arr.length)? S_arr.length : (S_arr.length<T_arr.length)? T_arr.length : T_arr.length;
 
         char [] flettIChar = new char[S_arr.length + T_arr.length];
@@ -289,7 +289,7 @@ public class Oblig1 {
         for (int i = 1; i < arr.length; i++) {
             int current = arr[i];
             int j = i - 1;                              //Indeks til tallet bak
-            while(j >= 0 && current < arr[j]) {         //Så lenge det finnes et tall mindre enn current, bytt plass
+            while(j >= 0 && current < arr[j]) {         //Saa lenge det finnes et tall mindre enn current, bytt plass
                 arr[j+1] = arr[j];                      //Tallet bak blir verdien til indeks foran seg
                 j--;                                    //Bryter while loopen
             }
@@ -384,7 +384,7 @@ public class Oblig1 {
         String str = "";
         boolean inneholdt = true;
 
-        // Hvis det finnes et tegn på String a som ikke finnes i String b, return false
+        // Hvis det finnes et tegn paa String a som ikke finnes i String b, return false
         for(int i = 0; i < a.length(); i++){
             if(b.indexOf(a.charAt(i)) == -1){
                 return false;
@@ -397,11 +397,11 @@ public class Oblig1 {
                 str = str+a.charAt(i);
         }
 
-        // Teller hvor mange tegn er på hvert string
+        // Teller hvor mange tegn er paa hvert string
         int[] counterA = counter(str,a);
         int[] counterB = counter(str,b);
 
-        // Hvis antall tegn på String b er mindre enn antall tegn på String a, return false
+        // Hvis antall tegn paa String b er mindre enn antall tegn paa String a, return false
         for(int ca : counterA){
             for(int cb : counterB){
                 if (cb < ca) {
