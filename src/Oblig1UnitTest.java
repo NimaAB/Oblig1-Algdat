@@ -27,21 +27,12 @@ class Oblig1UnitTest {
 
     @org.junit.jupiter.api.Test
     void antallUlikeUsortert() {
-
-        int[] d = {6, 2, 4, 6, 9, 1, 4, 9, 10};
-        int svar = Oblig1.antallUlikeUsortert(d);
-        assertEquals(6,svar);
+        assertEquals(true, false, "Implementer indekssortering og denne testen");
     }
 
     @org.junit.jupiter.api.Test
     void delsortering() {
-        int[] d = {1,2,3,-4,5};
-        int [] expected ={1,3, 5, -4, 2};
-        Oblig1.delsortering(d);
-        assertArrayEquals(expected,d);
-        System.out.println(Arrays.toString(d));
-
-        //assertEquals(true, false, "Implementer delsortering og denne testen");
+      assertEquals(true, false, "Implementer delsortering og denne testen");
     }
 
     @org.junit.jupiter.api.Test
@@ -61,10 +52,7 @@ class Oblig1UnitTest {
 
     @org.junit.jupiter.api.Test
     void tredjeMin() {
-        int [] a = {1,3,2};
-        int [] r = Oblig1.tredjeMin(a);
-        int [] f = {0,2,1};
-        assertArrayEquals(f,r);
+       assertEquals(true, false, "Implementer indekssortering og denne testen");
     }
 
     @org.junit.jupiter.api.Test
