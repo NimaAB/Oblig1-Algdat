@@ -14,16 +14,10 @@ public class Oblig1 {
             throw new NoSuchElementException("Tabellen er tomt!");
         }
 
-        // Loper gjennom arrayet og finner den storste verdi
+        // Nytt alternativ losning som mer effektiv, Obytinger flytter maks tallet til siste posisjon(a.length-1),
+        //dermed trenges det ikke å gå gjennom samme array for å finne maksimum tall.
         ombyttinger(a);
-        int maks_verdi = a[0];
-
-        for(int i = 1; i < a.length; i++){
-            if(a[i] > maks_verdi){
-                maks_verdi = a[i];
-            }
-        }
-        return maks_verdi;
+        return a[a.length-1];
     }
 
     public static int ombyttinger(int[] a) {
